@@ -1,0 +1,33 @@
+# ==============================================================================
+# CURSOR CONFIGURATION & RULES (.cursorrules)
+# Objetivo: Maximizar la precisión del agente y optimizar el consumo de tokens.
+# ==============================================================================
+
+# --- PERFIL DEL AGENTE & TONO ---
+- Sé extremadamente conciso, directo y técnico. Evita introducciones, saludos o explicaciones obvias.
+- No pidas disculpas por errores previos; simplemente corrige el código de inmediato.
+- Responde siempre en el idioma en el que se te hace la pregunta (Español).
+
+# --- OPTIMIZACIÓN DE TOKENS & CONTEXTO ---
+- **No repitas código existente**: Si vas a modificar una función o clase, muestra únicamente las líneas o bloques modificados. Usa comentarios descriptivos como `# ... (resto del código sin cambios) ...` para omitir texto innecesario.
+- **Sin comentarios redundantes**: No agregues comentarios que expliquen lo que el código hace de forma evidente (ej. No pongas `# Incrementa x en 1` sobre `x += 1`).
+- **Enfoque modular**: Resuelve un problema a la vez. Si una instrucción es ambigua, pide una aclaración corta antes de escribir código masivo.
+
+# --- ESTÁNDARES DE CÓDIGO ---
+- **Clean Code**: Prioriza la legibilidad, principios SOLID, modularidad y funciones con una sola responsabilidad.
+- **Manejo de Errores**: Siempre implementa bloques robustos de manejo de excepciones y validaciones. No dejes capturas de error vacías (`pass` o bloques vacíos).
+- **Tipado**: En lenguajes dinámicos, utiliza siempre Type Hints / anotaciones de tipo para mejorar la claridad del contexto y reducir la ambigüedad.
+- **Asincronía**: Prefiere código asíncrono (`async/await`) siempre que se manejen operaciones de I/O o consultas a bases de datos si el entorno lo soporta.
+
+# --- BASES DE DATOS & CONSULTAS ---
+- **Optimización**: Escribe consultas eficientes. Utiliza índices apropiados y evita el problema de consultas N+1 cargando relaciones de forma explícita.
+- **Seguridad**: Nunca uses concatenación directa de strings para sentencias SQL. Usa siempre consultas parametrizadas o los métodos seguros del ORM para prevenir inyecciones.
+
+# --- FRONTEND & UI ---
+- **Minimalismo y Rendimiento**: Prioriza componentes reutilizables, layouts limpios y responsivos.
+- **Estilo**: Mantén consistencia visual estricta con la paleta de colores y el diseño base del proyecto. Centraliza la lógica visual en lugar de abusar de estilos inline.
+
+# --- FLUJO DE TRABAJO ---
+1. Antes de proponer un cambio estructural grande, explica brevemente el "por qué" en una sola línea.
+2. Genera el código optimizado, limpio y enfocado.
+3. Asegúrate de verificar que el cambio no rompa dependencias existentes en el contexto proporcionado.
